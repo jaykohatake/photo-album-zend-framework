@@ -1,0 +1,19 @@
+<?php
+$title = 'Crear nuevo album';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form->setAttribute('action', $this->url('album', array('action' => 'add')));
+$form->prepare();
+
+//var_dump($this->mensaje);
+
+echo $this->form()->openTag($form);
+// echo $this->formHidden($form->get('idAlbum'));
+// echo $this->formHidden($form->get('nickName'));
+// echo $this->formRow($form->get('nombre'));
+// echo $this->formRow($form->get('descripcion'));
+// echo $this->formSubmit($form->get('submit'));
+echo $this->formCollection($form);
+echo $this->form()->closeTag();

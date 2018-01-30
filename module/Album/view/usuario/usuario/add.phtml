@@ -1,0 +1,23 @@
+<?php
+$title = 'Crear nuevo usuario';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form->setAttribute('action', $this->url('usuario', array('action' => 'add')));
+
+//echo "hola<br />";
+$form->prepare();
+
+echo $this->form()->openTag($form);
+// echo $this->formHidden($form->get('idAlbum'));
+// echo $this->formHidden($form->get('nickName'));
+// echo $this->formRow($form->get('nombre'));
+// echo $this->formRow($form->get('descripcion'));
+// echo $this->formSubmit($form->get('submit'));
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+
+//if(isset($this->user)){
+//    var_dump($this->user);
+//}

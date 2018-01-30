@@ -1,0 +1,21 @@
+<h1><?php echo $this->nombre?></h1>
+
+<a href="<?php echo $this->url('imagen', array('action' => 'add', 'id' => $this->idAlbum)) ?>">Crear nueva imagen</a><br />
+
+<?php foreach($this->imagenes as $imagen){ 
+//    var_dump($imagen);
+//    if(is_a($imagen, 'Imagen\Model\Imagen')){
+//        echo "es una Imagen";
+//    }
+    ?>
+
+<div class="col-lg-4">
+    <h3><?php echo $imagen->getTitulo()?></h3>
+    <img src="<?php echo $this->basePath().'/img/'.$this->usuario.'/'. $imagen->getfoto()?>" width="100"/>
+    <div><?php echo $imagen->getDescripcion()?></div>
+    <div><?php echo $imagen->getComentario()?></div>
+</div>
+
+<?php } ?>
+
+<div style="clear: both"></div>

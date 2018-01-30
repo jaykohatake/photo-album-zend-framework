@@ -1,0 +1,41 @@
+<a href="<?php echo $this->url('usuario', array('action' => 'add')) ?>">Crear nuevo usuario</a>
+
+<table class="table">
+    <tr>
+        <th>
+            Documento
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Nickname
+        </th>
+        <th>
+            Avatar
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+    <?php
+//    echo "index usuario"."<br /><br />";
+
+    if(isset($this->usuarios)){
+    foreach ($this->usuarios as $usuario) {  ?>
+
+    <tr>
+        <td><?php echo $usuario->getDocumento()?></td>
+        <td><?php echo $usuario->getNombre()?></td>
+        <td><?php echo $usuario->getNickName()?></td>
+        <td><?php echo $usuario->getAvatar()?></td>
+        <td>
+            <a href="<?php echo $this->url('usuario', array('action' => 'edit', 'id' => $usuario->getDocumento()))?>">Editar</a>
+            <a href="<?php echo $this->url('usuario', array('action' => 'delete', "id" => $usuario->getDocumento()))?>">Eliminar</a>
+        </td>
+    </tr>
+
+
+    <?php } }?>
+
+</table>

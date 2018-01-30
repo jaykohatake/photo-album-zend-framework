@@ -1,0 +1,30 @@
+<?php
+
+ $title = 'Editar usuario';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <?php
+ $form = $this->form;
+  $form->setAttribute('action', $this->url(
+     'usuario',
+     array(
+         'action' => 'edit',
+         'id'     => $this->id,
+     )
+ ));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+// echo $this->formRow($form->get('documento'));
+// echo $this->formRow($form->get('nombre'));
+// echo $this->formRow($form->get('nickName'));
+// echo $this->formRow($form->get('avatar'));
+// echo $this->formSubmit($form->get('submit'));
+ echo $this->formCollection($form);
+ echo $this->form()->closeTag();
+
+ 
+// echo '<br /><br />'.var_dump($this->user);
+// echo '<br /><br />'.var_dump($this->ex);
